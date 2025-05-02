@@ -10,20 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout código
-      uses: actions/checkout@v4
+      - name: Checkout código
+        uses: actions/checkout@v4
 
-    - name: Configurar Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 22
-        cache: 'npm'
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
 
-    - name: Instalar dependências
-      run: npm ci
+      - name: Instalar dependências
+        run: npm ci
 
-    - name: Instalar browsers do Playwright
-      run: npx playwright install --with-deps
+      - name: Instalar browsers do Playwright
+        run: npx playwright install --with-deps
 
-    - name: Executar testes
-      run: npm test
+      - name: Executar testes
+        run: npm test
